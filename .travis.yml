@@ -12,3 +12,4 @@ addons:
     packages:
       - clang-3.6
       - g++-4.8
+sudo: required
