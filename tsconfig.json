@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "declaration": true
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./*.d.ts",
+        "!./types/*.d.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./index.ts",
+        "./types/pingoptions.ts",
+        "./typings/node/node.d.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}
