@@ -43,6 +43,12 @@ class pinger {
                             pingresults.pings[pingresults.pingsSent - 1].time =
                                 (pingresults.pings[pingresults.pingsSent - 1].received - pingresults.pings[pingresults.pingsSent - 1].sent) / 1000;
                         }
+                        if (pingresults.pings[pingresults.pingsSent - 1].time) {
+                            pingresults.pings[pingresults.pingsSent - 1].status = 'success';
+                        }
+                        else {
+                            pingresults.pings[pingresults.pingsSent - 1].status = 'failed';
+                        }
                         pingresults.pingsreceived++;
                         if (options.onReply) {
                             options.onReply(icmpBuffer, buffer, pingresults.pings[pingresults.pingsSent - 1], pingresults);
@@ -63,6 +69,7 @@ class pinger {
                 bytesSent = buffer.length;
                 pingresults.pings[pingresults.pingsSent] = {};
                 pingresults.pings[pingresults.pingsSent].sent = microtime.now();
+                pingresults.pings[pingresults.pingsSent].status = 'failed';
                 pingresults.pingsSent++;
                 socket.send(buffer, 0, buffer.length, dest, function (err) {
                     if (err) {
