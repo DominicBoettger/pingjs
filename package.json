@@ -1,6 +1,6 @@
 {
   "name": "pingjs",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Ping module for node.js written for node >=4.X",
   "main": "index.js",
   "directories": {
